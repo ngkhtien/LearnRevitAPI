@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="DataGridStyle.xaml"/>
+        <ResourceDictionary Source="ComboBoxStyle.xaml"/>
+        <ResourceDictionary Source="TextBoxStyle.xaml"/>
+        <ResourceDictionary Source="ButtonStyle.xaml"/>
+        <ResourceDictionary Source="CheckBoxStyle.xaml"/>
+        <ResourceDictionary Source="RadiobuttonStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style TargetType="ListBox">
+        <Setter Property="BorderBrush" Value="#e3e9ef"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+    <Style TargetType="ListView">
+        <Setter Property="BorderBrush" Value="#e3e9ef"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style TargetType="DockPanel">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style TargetType="StackPanel">
+        <Setter Property="Margin" Value="4"/>
+    </Style>
+
+    <Style TargetType="Grid">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style TargetType="Separator">
+        <Setter Property="Margin"  Value="4"/>
+    </Style>
+
+</ResourceDictionary>

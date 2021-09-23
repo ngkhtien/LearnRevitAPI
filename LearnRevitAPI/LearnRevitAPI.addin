@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command LearnRevitAPI</Text>
+    <Description>Some description for LearnRevitAPI</Description>
+    <Assembly>LearnRevitAPI.dll</Assembly>
+    <FullClassName>LearnRevitAPI.Command</FullClassName>
+    <ClientId>2df52f87-6642-40a2-afa2-a9f7f2f38a79</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application LearnRevitAPI</Name>
+    <Assembly>LearnRevitAPI.dll</Assembly>
+    <FullClassName>LearnRevitAPI.App</FullClassName>
+    <ClientId>4768c072-6a25-48dd-9c98-11e97f590870</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

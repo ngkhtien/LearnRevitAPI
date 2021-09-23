@@ -1,0 +1,83 @@
+﻿<Window x:Class="LearnRevitAPI._03_ShareParameter_WPF.ParameterWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnRevitAPI._03_ShareParameter_WPF"
+             mc:Ignorable="d" 
+                    
+             Title="Transfer Parameter" ResizeMode="NoResize"
+             ShowInTaskbar="True" WindowStartupLocation="CenterScreen"
+             Width="600" Height="180"
+             Topmost="True"
+            >
+
+    <FrameworkElement.Resources>
+        <ResourceDictionary Source="../WPF_Lib/Style/Styles.xaml"/>
+    </FrameworkElement.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Source Parameter" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Target Parameter"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"/>
+
+            <ComboBox Grid.Row="0" Grid.Column="1"
+                      Style="{StaticResource ComboBoxStyle}"
+                      ItemsSource="{Binding AllSourceParameter}"
+                      SelectedItem="{Binding SelectedSourceParameter}"
+                      IsEnabled="True"/>
+            <ComboBox Grid.Row="1" Grid.Column="1"
+                      Style="{StaticResource ComboBoxStyle}"
+                      ItemsSource="{Binding AllTargetParameter}"
+                      SelectedItem="{Binding SelectedTargetParameter}"
+                      IsEnabled="True"/>
+
+        </Grid>
+
+        <DockPanel LastChildFill="False"
+                   Height="40">
+
+            <Button DockPanel.Dock="Right"
+                    Content="Cancel"
+                    Style="{StaticResource ButtonStyle}"
+                    Click="btnCancel_Click"/>
+            <Button DockPanel.Dock="Right"
+                    Content="OK"
+                    Style="{StaticResource ButtonStyle}"
+                    Click="btnOK_Click"/>
+
+            <RadioButton DockPanel.Dock="Left"
+                         Content="Entire Project"
+                         GroupName="ElementLocation"
+                         Style="{StaticResource RadioButtonStyle}"
+                         IsChecked="{Binding IsEntireProject}"/>
+
+            <RadioButton DockPanel.Dock="Left"
+                         Content="Current View"
+                         GroupName="ElementLocation"
+                         Style="{StaticResource RadioButtonStyle}"
+                         IsChecked="{Binding IsCurrentView}"/>
+
+            <RadioButton DockPanel.Dock="Left"
+                         Content="Current Selection"
+                         GroupName="ElementLocation"
+                         Style="{StaticResource RadioButtonStyle}"
+                         IsChecked="{Binding IsCurrentSelection}"/>
+
+        </DockPanel>
+    </StackPanel>
+</Window>
