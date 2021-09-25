@@ -61,6 +61,7 @@
     <Compile Include="02_SelectionFilter\FloorSelectionFilter.cs" />
     <Compile Include="02_SelectionFilter\TextNoteSelectionFilter.cs" />
     <Compile Include="02_SelectionFilter\WallSelectionFilter.cs" />
+    <Compile Include="03_ShareParameter_WPF\CreateShareParameterCmd.cs" />
     <Compile Include="03_ShareParameter_WPF\ParameterWindow.xaml.cs">
       <DependentUpon>ParameterWindow.xaml</DependentUpon>
     </Compile>
@@ -69,6 +70,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\EqualityCompareCategory.cs" />
+    <Compile Include="Lib\OfficeUtils.cs" />
     <Compile Include="Lib\ParameterUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
