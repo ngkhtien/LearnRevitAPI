@@ -131,7 +131,25 @@ namespace LearnRevitAPI.Lib
             return allParameters;
         }
 
+      /// <summary>
+      /// Get all string parameters editable
+      /// </summary>
+      /// <param name="el"></param>
+      /// <returns></returns>
+      public static List<string> GetAllStringParametersEditable(Element el)
+      {
+         List<string> allStringParameters = new List<string>();
 
+         foreach (Parameter p in el.Parameters)
+         {
+            if (p.IsReadOnly == false && p.StorageType == StorageType.String)
+            {
+               allStringParameters.Add(p.Definition.Name);
+            }
+         }
+
+         return allStringParameters;
+      }
 
         #region Shared Parameter
 
