@@ -93,6 +93,9 @@
     <Compile Include="05_CopyTextToElement\CopyTextToElementWindow.xaml.cs">
       <DependentUpon>CopyTextToElementWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="06_CreateNewElement\N3_CreateLineCmd.cs" />
+    <Compile Include="06_CreateNewElement\N1_CreateGridCmd.cs" />
+    <Compile Include="06_CreateNewElement\N2_CreateLevelCmd.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
