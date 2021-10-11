@@ -19,7 +19,7 @@ namespace LearnRevitAPI.Lib
         {
             BoundingBoxXYZ box = element.get_BoundingBox(doc.ActiveView);
 
-            double tolerance = UnitUtils.Convert(50, DisplayUnitType.DUT_MILLIMETERS, DisplayUnitType.DUT_DECIMAL_FEET);
+            double tolerance = UnitUtils.Convert(50, UnitTypeId.Millimeters, UnitTypeId.Feet);
 
             XYZ minPoint = new XYZ(box.Min.X - tolerance, 
                 box.Min.Y - tolerance, 0);
@@ -63,7 +63,7 @@ namespace LearnRevitAPI.Lib
         {
             BoundingBoxXYZ box = element.get_BoundingBox(doc.ActiveView);
 
-            double tolerance = UnitUtils.Convert(saiSo, DisplayUnitType.DUT_MILLIMETERS, DisplayUnitType.DUT_DECIMAL_FEET);
+            double tolerance = UnitUtils.Convert(saiSo, UnitTypeId.Millimeters, UnitTypeId.Feet);
 
          XYZ minPoint = new XYZ(box.Min.X - tolerance,
                 box.Min.Y - tolerance, 0);

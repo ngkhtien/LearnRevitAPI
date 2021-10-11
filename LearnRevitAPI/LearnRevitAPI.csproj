@@ -41,29 +41,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaBIMWPF">
-      <HintPath>..\..\..\Source Code 12 Bai\dllReference\AlphaBIMWPF.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\AlphaBIMWPF.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Aspose.Cells, Version=21.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.21.9.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro.ALB">
-      <HintPath>..\..\..\Source Code 12 Bai\dllReference\MahApps.Metro.ALB.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\MahApps.Metro.ALB.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks">
-      <HintPath>..\..\..\Source Code 12 Bai\dllReference\MahApps.Metro.IconPacks.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\MahApps.Metro.IconPacks.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf.ALB">
-      <HintPath>..\..\..\Source Code 12 Bai\dllReference\MaterialDesignThemes.Wpf.ALB.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\MaterialDesignThemes.Wpf.ALB.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\2022\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <HintPath>..\..\SourceCode\dllReference\2022\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -162,6 +165,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

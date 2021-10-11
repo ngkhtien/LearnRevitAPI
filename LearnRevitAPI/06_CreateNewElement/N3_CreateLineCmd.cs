@@ -1,5 +1,6 @@
 ﻿#region Namespaces
 
+using Aspose.Cells.Charts;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -21,7 +22,7 @@ namespace LearnRevitAPI._06_CreateNewElement
          Document doc = uidoc.Document;
 
          XYZ first = new XYZ(-17.9123197911809, 9.16512817383808, 0);
-         XYZ second = new XYZ(first.X + UnitUtils.Convert(1000, DisplayUnitType.DUT_MILLIMETERS, DisplayUnitType.DUT_DECIMAL_FEET), first.Y, first.Z);
+         XYZ second = new XYZ(first.X + UnitUtils.Convert(1000, UnitTypeId.Millimeters, UnitTypeId.Feet), first.Y, first.Z);
 
          Line line = Line.CreateBound(first, second);
 

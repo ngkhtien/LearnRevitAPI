@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ParameterUtils = LearnRevitAPI.Lib.ParameterUtils;
 
 namespace LearnRevitAPI._03_ShareParameter_WPF
 {

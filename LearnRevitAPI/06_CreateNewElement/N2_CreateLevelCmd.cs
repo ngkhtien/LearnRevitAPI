@@ -26,7 +26,7 @@ namespace LearnRevitAPI._06_CreateNewElement
          {
             trans.Start("Create Level from Revit API");
 
-            double levelElevation = UnitUtils.Convert(5000, DisplayUnitType.DUT_MILLIMETERS, DisplayUnitType.DUT_DECIMAL_FEET);
+            double levelElevation = UnitUtils.Convert(5000, UnitTypeId.Millimeters, UnitTypeId.Feet);
             Level newLevel = Level.Create(doc, levelElevation);
             newLevel.Name = "MeoCon";
 
