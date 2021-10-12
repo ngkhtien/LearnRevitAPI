@@ -16,7 +16,6 @@
                  Height="180" Width="500"
                  Topmost="True" 
 
-                 Icon="C:\ProgramData\Autodesk\ApplicationPlugins\LearnRevitAPI.bundle\Contents\Resources\Image\Lu.png"
                  IconScalingMode="NoScaleSmallerFrame"
                  IconBitmapScalingMode="HighQuality"
                  >

@@ -7,6 +7,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using System.Collections.Generic;
 using Application = Autodesk.Revit.ApplicationServices.Application;
+using DisplayUnitType = Autodesk.Revit.DB.DisplayUnitType;
 
 #endregion Namespaces
 namespace LearnRevitAPI._06_CreateNewElement
@@ -22,7 +23,7 @@ namespace LearnRevitAPI._06_CreateNewElement
          Document doc = uidoc.Document;
 
          XYZ first = new XYZ(-17.9123197911809, 9.16512817383808, 0);
-         XYZ second = new XYZ(first.X + UnitUtils.Convert(1000, UnitTypeId.Millimeters, UnitTypeId.Feet), first.Y, first.Z);
+         XYZ second = new XYZ(first.X + UnitUtils.Convert(1000, DisplayUnitType.DUT_MILLIMETERS, DisplayUnitType.DUT_DECIMAL_FEET), first.Y, first.Z);
 
          Line line = Line.CreateBound(first, second);
 

@@ -62,12 +62,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\SourceCode\dllReference\2022\RevitAPI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\SourceCode\dllReference\2022\RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
@@ -96,7 +94,7 @@
     <Compile Include="05_CopyTextToElement\CopyTextToElementWindow.xaml.cs">
       <DependentUpon>CopyTextToElementWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="06_CreateNewElement\Class1.cs" />
+    <Compile Include="06_CreateNewElement\N4_CreateTagCmd.cs" />
     <Compile Include="06_CreateNewElement\N3_CreateLineCmd.cs" />
     <Compile Include="06_CreateNewElement\N1_CreateGridCmd.cs" />
     <Compile Include="06_CreateNewElement\N2_CreateLevelCmd.cs" />

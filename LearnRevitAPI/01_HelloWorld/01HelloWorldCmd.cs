@@ -35,7 +35,7 @@ namespace LearnRevitAPI._01_HelloWorld
          // Use windows forms system "System.Windows.Forms"
          // Remember to add "using Application = Autodesk.Revit.ApplicationServices.Application"
          MessageBox.Show("Length" +
-                          UnitUtils.Convert(p.AsDouble(), UnitTypeId.Feet, UnitTypeId.Millimeters) + " mm");
+                          UnitUtils.Convert(p.AsDouble(), DisplayUnitType.DUT_DECIMAL_FEET, DisplayUnitType.DUT_MILLIMETERS) + " mm");
 
          return Result.Succeeded;
       }
