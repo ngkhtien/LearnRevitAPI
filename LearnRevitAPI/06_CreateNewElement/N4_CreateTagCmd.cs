@@ -25,8 +25,7 @@ namespace LearnRevitAPI._06_CreateNewElement
          Element tagSymbol = new FilteredElementCollector(doc)
             .OfClass(typeof(FamilySymbol))
             .Cast<FamilySymbol>()
-            .Where(sym => sym.Category.Name.Equals("Wall Tags"))
-            .FirstOrDefault();
+            .FirstOrDefault(sym => sym.Category.Name.Equals("Wall Tags"));
 
          Reference r = uidoc.Selection.PickObject(ObjectType.Element, "Pick Wall");
 

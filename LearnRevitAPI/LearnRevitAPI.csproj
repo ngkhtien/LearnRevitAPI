@@ -76,6 +76,7 @@
     <Compile Include="01_HelloWorld\01HelloWorldCmd.cs" />
     <Compile Include="02_SelectionFilter\02SelectionFilterCmd.cs" />
     <Compile Include="02_SelectionFilter\FloorSelectionFilter.cs" />
+    <Compile Include="02_SelectionFilter\LineSelectionFilter.cs" />
     <Compile Include="02_SelectionFilter\TextNoteSelectionFilter.cs" />
     <Compile Include="02_SelectionFilter\WallSelectionFilter.cs" />
     <Compile Include="03_ShareParameter_WPF\CreateShareParameterCmd.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="06_CreateNewElement\N3_CreateLineCmd.cs" />
     <Compile Include="06_CreateNewElement\N1_CreateGridCmd.cs" />
     <Compile Include="06_CreateNewElement\N2_CreateLevelCmd.cs" />
+    <Compile Include="06_CreateNewElement\N5_CreateDimensionBetween2LinesCmd.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
