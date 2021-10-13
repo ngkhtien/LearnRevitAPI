@@ -95,11 +95,12 @@
     <Compile Include="05_CopyTextToElement\CopyTextToElementWindow.xaml.cs">
       <DependentUpon>CopyTextToElementWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="06_CreateNewElement\N4_CreateTagCmd.cs" />
-    <Compile Include="06_CreateNewElement\N3_CreateLineCmd.cs" />
-    <Compile Include="06_CreateNewElement\N1_CreateGridCmd.cs" />
-    <Compile Include="06_CreateNewElement\N2_CreateLevelCmd.cs" />
-    <Compile Include="06_CreateNewElement\N5_CreateDimensionBetween2LinesCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N6_CreateDimensionForGridCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N4_CreateTagCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N3_CreateLineCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N1_CreateGridCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N2_CreateLevelCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateAnnotationElement\N5_CreateDimensionBetween2LinesCmd.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
