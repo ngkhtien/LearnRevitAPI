@@ -101,11 +101,14 @@
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N1_CreateGridCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N2_CreateLevelCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N5_CreateDimensionBetween2LinesCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateFraming\CreateFramingCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateFraming\CreateWallCmd.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
     <Compile Include="Lib\ElementSelector.cs" />
     <Compile Include="Lib\EqualityCompareCategory.cs" />
+    <Compile Include="Lib\FamilySymbolUtils.cs" />
     <Compile Include="Lib\OfficeUtils.cs" />
     <Compile Include="Lib\ParameterUtils.cs" />
     <Compile Include="Lib\RevitAPIConstraint.cs" />
