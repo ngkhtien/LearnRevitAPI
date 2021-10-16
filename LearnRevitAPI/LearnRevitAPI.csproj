@@ -63,9 +63,11 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
       <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
@@ -101,8 +103,9 @@
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N1_CreateGridCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N2_CreateLevelCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N5_CreateDimensionBetween2LinesCmd.cs" />
-    <Compile Include="06_CreateNewElement\CreateFraming\CreateFramingCmd.cs" />
-    <Compile Include="06_CreateNewElement\CreateFraming\CreateWallCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateModelElement\CreateFramingCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateModelElement\CreateDoorCmd.cs" />
+    <Compile Include="06_CreateNewElement\CreateModelElement\CreateWallCmd.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
