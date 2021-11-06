@@ -1,5 +1,7 @@
 ﻿#region Namespaces
 
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
@@ -10,10 +12,10 @@ using Application = Autodesk.Revit.ApplicationServices.Application;
 
 #endregion Namespaces
 
-namespace LearnRevitAPI._06_CreateNewElement.CreateFraming
+namespace LearnRevitAPI._06_CreateNewElement.CreateModelElement
 {
    [Transaction(TransactionMode.Manual)]
-   class CreateFramingCmd : IExternalCommand
+   class CreateWallCmd : IExternalCommand
    {
       public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
       {
@@ -26,26 +28,28 @@ namespace LearnRevitAPI._06_CreateNewElement.CreateFraming
          XYZ pt1 = uidoc.Selection.PickPoint("Pick Start Point");
          XYZ pt2 = uidoc.Selection.PickPoint("Pick End Point");
 
-         Curve framingLocation = Line.CreateBound(pt1, pt2);
+         IList<Curve> wallPlace = new List<Curve>();
 
-         FamilySymbol familySymbol = new FilteredElementCollector(doc)
-            .OfClass(typeof(FamilySymbol))
-            .OfCategory(BuiltInCategory.OST_StructuralFraming)
-            .Cast<FamilySymbol>()
+         Curve wallLocation = Line.CreateBound(pt1, pt2);
+         wallPlace.Add(wallLocation);
+
+         WallType wallType = new FilteredElementCollector(doc)
+            .OfClass(typeof(WallType))
+            .OfCategory(BuiltInCategory.OST_Walls)
+            .Cast<WallType>()
             .FirstOrDefault();
 
          // Get current level
          Level level = doc.ActiveView.GenLevel;
 
-         // Get level
-         // Level level = new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().FirstOrDefault(l=>l.Name.Equal("Level 2"));
-
          using (Transaction trans = new Transaction(doc))
          {
-            trans.Start("Create Framing by Revit API");
+            trans.Start("Create Wall by Revit API");
 
-            FamilyInstance instance =
-               doc.Create.NewFamilyInstance(framingLocation, familySymbol, level, StructuralType.Beam);
+            //FamilyInstance instance =
+            //   doc.Create.NewFamilyInstance(framingLocation, familySymbol, level, StructuralType.NonStructural);
+
+            Wall wall = Wall.Create(doc, wallLocation, wallType.Id, level.Id, 2000, 0, false, false);
 
             trans.Commit();
          }
