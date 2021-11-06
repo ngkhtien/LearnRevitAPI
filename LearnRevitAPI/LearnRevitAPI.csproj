@@ -106,8 +106,6 @@
     <Compile Include="06_CreateNewElement\CreateModelElement\CreateFramingCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateModelElement\CreateDoorCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateModelElement\CreateWallCmd.cs" />
-    <Compile Include="06_CreateNewElement\CreateFraming\CreateFramingCmd.cs" />
-    <Compile Include="06_CreateNewElement\CreateFraming\CreateWallCmd.cs" />
     <Compile Include="07_ModelFromCAD\ColumnFromCADCmd.cs" />
     <Compile Include="07_ModelFromCAD\ColumnFromCADViewModel.cs" />
     <Compile Include="07_ModelFromCAD\ColumnFromCADWindow.xaml.cs">
