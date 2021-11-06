@@ -103,6 +103,11 @@
     <Compile Include="06_CreateNewElement\CreateAnnotationElement\N5_CreateDimensionBetween2LinesCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateFraming\CreateFramingCmd.cs" />
     <Compile Include="06_CreateNewElement\CreateFraming\CreateWallCmd.cs" />
+    <Compile Include="07_ModelFromCAD\ColumnFromCADCmd.cs" />
+    <Compile Include="07_ModelFromCAD\ColumnFromCADViewModel.cs" />
+    <Compile Include="07_ModelFromCAD\ColumnFromCADWindow.xaml.cs">
+      <DependentUpon>ColumnFromCADWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
@@ -135,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="05_CopyTextToElement\CopyTextToElementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="07_ModelFromCAD\ColumnFromCADWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
