@@ -117,6 +117,7 @@
     <Compile Include="Lib\ElementSelector.cs" />
     <Compile Include="Lib\EqualityCompareCategory.cs" />
     <Compile Include="Lib\FamilySymbolUtils.cs" />
+    <Compile Include="Lib\ImportInstanceSelectionFilter.cs" />
     <Compile Include="Lib\OfficeUtils.cs" />
     <Compile Include="Lib\ParameterUtils.cs" />
     <Compile Include="Lib\RevitAPIConstraint.cs" />

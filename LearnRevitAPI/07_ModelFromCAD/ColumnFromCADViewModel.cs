@@ -28,6 +28,8 @@ namespace LearnRevitAPI._07_ModelFromCAD
          // Save date from Revit to 2 fields Doc, UiDoc
          UiDoc = uiDoc;
          Doc = UiDoc.Document;
+
+
       }
 
       #region public property
