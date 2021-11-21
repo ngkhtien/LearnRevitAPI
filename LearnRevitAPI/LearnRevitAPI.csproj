@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="Lib\CadUtils.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
     <Compile Include="Lib\ElementSelector.cs" />
     <Compile Include="Lib\EqualityCompareCategory.cs" />

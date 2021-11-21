@@ -1,5 +1,6 @@
 ﻿#region Namespaces
 
+using System;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -29,7 +30,21 @@ namespace LearnRevitAPI._07_ModelFromCAD
          UiDoc = uiDoc;
          Doc = UiDoc.Document;
 
+         Initialize();
+      }
 
+      private void Initialize()
+      {
+         // Select CAD Link
+         Reference r = UiDoc.Selection.PickObject(ObjectType.Element, new ImportInstanceSelectionFilter(),
+            "SELECT CAD LINK");
+
+         SelectedCadLink = (ImportInstance) Doc.GetElement(r);
+
+         // Get all layers
+         AllLayers = CadUtils.GetAllLayer(SelectedCadLink);
+         if (AllLayers.Any())
+            SelectedLayer = AllLayers[0];
       }
 
       #region public property
