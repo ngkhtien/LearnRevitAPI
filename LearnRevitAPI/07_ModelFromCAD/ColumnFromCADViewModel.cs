@@ -39,12 +39,36 @@ namespace LearnRevitAPI._07_ModelFromCAD
          Reference r = UiDoc.Selection.PickObject(ObjectType.Element, new ImportInstanceSelectionFilter(),
             "SELECT CAD LINK");
 
-         SelectedCadLink = (ImportInstance) Doc.GetElement(r);
+         SelectedCadLink = (ImportInstance)Doc.GetElement(r);
 
          // Get all layers
          AllLayers = CadUtils.GetAllLayer(SelectedCadLink);
          if (AllLayers.Any())
+         {
             SelectedLayer = AllLayers[0];
+         }
+
+         // Get all column family
+         AllColumnFamilies = new FilteredElementCollector(Doc)
+            .OfClass(typeof(Family))
+            .Cast<Family>()
+            .Where(f => f.FamilyCategory.Name.Equals("Structural Columns")
+                   || f.FamilyCategory.Name.Equals("Columns"))
+            .ToList();
+
+         if (AllColumnFamilies.Any())
+         {
+            SelectedColumnFamily = AllColumnFamilies[0];
+         }
+
+         // Get all levels
+         AllLevel = new FilteredElementCollector(Doc)
+            .OfClass(typeof(Level))
+            .Cast<Level>()
+            .ToList();
+
+         BaseLevel = AllLevel.First();
+         TopLevel = AllLevel.Last();
       }
 
       #region public property
