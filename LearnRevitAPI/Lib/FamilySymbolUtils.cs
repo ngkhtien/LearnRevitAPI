@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 #endregion
 
-namespace AlphaBIM
+namespace LearnRevitAPI.Lib
 {
     public static class FamilySymbolUtils
     {
@@ -65,7 +65,7 @@ namespace AlphaBIM
 
             if (bParameter == null || hParameter == null)
             {
-                MessageBox.Show("Two parameters dimemsion of column family have to name is"
+                MessageBox.Show("Two parameters dimemsion of column family have to name is "
                                 + bPara +" & "+ hPara);
                 return null;
             }

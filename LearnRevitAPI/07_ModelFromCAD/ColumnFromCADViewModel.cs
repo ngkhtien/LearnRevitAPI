@@ -39,7 +39,7 @@ namespace LearnRevitAPI._07_ModelFromCAD
          Reference r = UiDoc.Selection.PickObject(ObjectType.Element, new ImportInstanceSelectionFilter(),
             "SELECT CAD LINK");
 
-         SelectedCadLink = (ImportInstance)Doc.GetElement(r);
+         SelectedCadLink = Doc.GetElement(r) as ImportInstance;
 
          // Get all layers
          AllLayers = CadUtils.GetAllLayer(SelectedCadLink);
@@ -73,7 +73,7 @@ namespace LearnRevitAPI._07_ModelFromCAD
 
       #region public property
 
-      internal ImportInstance SelectedCadLink;
+      public ImportInstance SelectedCadLink;
 
       #region Binding properties
 
