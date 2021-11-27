@@ -112,6 +112,12 @@
     <Compile Include="07_ModelFromCAD\ColumnFromCADWindow.xaml.cs">
       <DependentUpon>ColumnFromCADWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="08_PurgeView-DirectShape\PurgeViewCmd.cs" />
+    <Compile Include="08_PurgeView-DirectShape\PurgeViewModel.cs" />
+    <Compile Include="08_PurgeView-DirectShape\PurgeViewWindow.xaml.cs">
+      <DependentUpon>PurgeViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="08_PurgeView-DirectShape\ViewExtension.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Lib\CadUtils.cs" />
@@ -128,6 +134,7 @@
     <Compile Include="TestWPF\TestWPFWindow.xaml.cs">
       <DependentUpon>TestWPFWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Test\TestIntersect.cs" />
     <Compile Include="WPF_Lib\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="07_ModelFromCAD\ColumnFromCADWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="08_PurgeView-DirectShape\PurgeViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

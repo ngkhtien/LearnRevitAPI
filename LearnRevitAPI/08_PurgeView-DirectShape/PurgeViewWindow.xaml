@@ -1,0 +1,86 @@
+﻿<Window x:Class="LearnRevitAPI._08_PurgeView_DirectShape.PurgeViewWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnRevitAPI._08_PurgeView_DirectShape"
+             xmlns:alphaBim="clr-namespace:AlphaBIM;assembly=AlphaBIMWPF"
+             xmlns:learnRevitApi="clr-namespace:LearnRevitAPI"
+             mc:Ignorable="d" 
+
+             Title="Purge Model" ResizeMode="CanResize"
+             ShowInTaskbar="True"
+             WindowStartupLocation="CenterScreen"
+             Height="740" Width="750"
+             MinHeight="100" MinWidth="200"
+             Topmost="False">
+
+    <FrameworkElement.Resources>
+        <ResourceDictionary Source="../WPF_Lib/Style/Styles.xaml"/>
+    </FrameworkElement.Resources>
+
+    <TabControl>
+        <TabItem Header="Purge Views">
+            <DockPanel LastChildFill="True">
+                <DockPanel DockPanel.Dock="Bottom" Height="40" LastChildFill="False">
+                    <RadioButton DockPanel.Dock="Left"
+                                 GroupName="x"
+                                 Content="Select All"
+                                 Style="{DynamicResource RadioButtonStyle}"
+                                 Checked="SelectAll_Checked"
+                                 IsChecked="True"/>
+                    <RadioButton DockPanel.Dock="Left"
+                                 GroupName="x"
+                                 Content="Unselect All"
+                                 Checked="SelectNone_Checked"
+                                 Style="{DynamicResource RadioButtonStyle}"/>
+                    <Button DockPanel.Dock="Right"
+                            Content="CLOSE"
+                            Width="100"
+                            Click="btnClose_Click"
+                            Style="{DynamicResource ButtonStyle}"
+                            IsCancel="True"/>
+                    <Button DockPanel.Dock="Right"
+                            Content="PURGE"
+                            IsDefault="True"
+                            Style="{DynamicResource ButtonStyle}"
+                            Click="DeleteView_Click"/>
+                </DockPanel>
+
+                <DataGrid Style="{DynamicResource DataGridStyle}"
+                          ItemsSource="{Binding AllViewsExtension}"
+                          alphaBim:CustomDataGrid.SelectedItems="{Binding SelectedViewsExtension}"
+                          AutoGenerateColumns="False">
+                    
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Views"
+                                                Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="learnRevitApi:ViewExtension">
+                                    <TextBlock Text="{Binding Name}"
+                                               VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Delete"
+                                                Width="100">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate DataType="learnRevitApi:ViewExtension">
+                                    <CheckBox IsChecked="{Binding IsSelected}"
+                                              HorizontalAlignment="Center"
+                                              Click="IsSelectedClick"
+                                              Style="{DynamicResource CheckBoxStyle}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</Window>

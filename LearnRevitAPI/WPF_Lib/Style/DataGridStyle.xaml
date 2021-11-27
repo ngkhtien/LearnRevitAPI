@@ -20,13 +20,13 @@
 
     <Style x:Key="ColumnHeaderStyle" TargetType="DataGridColumnHeader">
         <Setter Property="Height" Value="33"/>
-        <Setter Property="Background" Value="#8cc63e"/>
+        <Setter Property="Background" Value="Gold"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource EmBrushBorder}"/>
         <Setter Property="Foreground" Value="#0C336C"/>
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="FontStyle" Value="Italic" />
-        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
 
@@ -56,9 +56,9 @@
 
         <Style.Triggers>
             <Trigger Property="DataGridCell.IsSelected" Value="true">
-                <Setter Property="Background" Value="Aquamarine" />
-                <Setter Property="Foreground" Value="Brown" />
-                <Setter Property="FontStyle" Value="Italic" />
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontStyle" Value="Normal" />
                 <Setter Property="FontWeight" Value="Bold" />
             </Trigger>
         </Style.Triggers>
