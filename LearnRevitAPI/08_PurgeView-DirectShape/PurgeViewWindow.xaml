@@ -47,9 +47,10 @@
                             Click="DeleteView_Click"/>
                 </DockPanel>
 
-                <DataGrid Style="{DynamicResource DataGridStyle}"
+                <DataGrid x:Name="DataGridPurgeView"
+                          SelectionMode="Extended"
+                          Style="{DynamicResource DataGridStyle}"
                           ItemsSource="{Binding AllViewsExtension}"
-                          alphaBim:CustomDataGrid.SelectedItems="{Binding SelectedViewsExtension}"
                           AutoGenerateColumns="False">
                     
                     <DataGrid.Columns>

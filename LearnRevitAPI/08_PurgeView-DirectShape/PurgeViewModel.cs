@@ -26,7 +26,6 @@ namespace LearnRevitAPI._08_PurgeView_DirectShape
 
       #region Binding Properties
       public List<ViewExtension> AllViewsExtension { get; set; }
-      public List<ViewExtension> SelectedViewsExtension { get; set; }
       #endregion
 
       public PurgeViewModel(UIDocument uidoc)
@@ -57,6 +56,30 @@ namespace LearnRevitAPI._08_PurgeView_DirectShape
          }
 
          AllViewsExtension.Sort((v1, v2) => string.CompareOrdinal(v1.Name, v2.Name));
+      }
+
+      public void DeleteView()
+      {
+         List<ViewExtension> allViewToDelete = AllViewsExtension.Where(v => v.IsSelected).ToList();
+
+         int num = 0;
+
+         foreach (ViewExtension viewExtension in allViewToDelete)
+         {
+            using (Transaction trans = new Transaction(Doc))
+            {
+               trans.Start("Delete Views");
+               Doc.Delete(viewExtension.View.Id);
+               num += 1;
+
+               trans.Commit();
+            }
+         }
+
+         MessageBox.Show("Deleted " + num + " Views!", 
+            "Delete View", 
+            MessageBoxButtons.OK, 
+            MessageBoxIcon.Information);
       }
    }
 }
