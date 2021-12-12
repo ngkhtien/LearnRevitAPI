@@ -33,8 +33,8 @@ namespace LearnRevitAPI._08_PurgeView_DirectShape
 
             if (showDialog == null || showDialog == false)
             {
-               transGroup.RollBack();
-               return Result.Cancelled;
+               //transGroup.RollBack();
+               //return Result.Cancelled;
             }
 
             transGroup.Assimilate();

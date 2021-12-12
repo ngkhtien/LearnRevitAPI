@@ -42,31 +42,32 @@
   <ItemGroup>
     <Reference Include="AlphaBIMWPF">
       <HintPath>..\..\SourceCode\dllReference\AlphaBIMWPF.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Aspose.Cells, Version=21.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.21.9.0\lib\net40\Aspose.Cells.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MahApps.Metro.ALB">
       <HintPath>..\..\SourceCode\dllReference\MahApps.Metro.ALB.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks">
       <HintPath>..\..\SourceCode\dllReference\MahApps.Metro.IconPacks.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf.ALB">
       <HintPath>..\..\SourceCode\dllReference\MaterialDesignThemes.Wpf.ALB.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <HintPath>E:\Program Files\Autodesk\Revit 2021\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <HintPath>E:\Program Files\Autodesk\Revit 2021\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -193,6 +194,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WPF_Lib\Style\TextBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF_Lib\Style\TreeViewStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

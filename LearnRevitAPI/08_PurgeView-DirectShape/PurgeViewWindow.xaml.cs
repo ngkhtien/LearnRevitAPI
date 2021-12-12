@@ -52,7 +52,7 @@ namespace LearnRevitAPI._08_PurgeView_DirectShape
 
       private void btnClose_Click(object sender, RoutedEventArgs e)
       {
-         DialogResult = false;
+         //DialogResult = false;
          Close();
       }
 
