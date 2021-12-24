@@ -49,7 +49,7 @@
                         <Border Margin="0" Background="#FFECF5FD" x:Name="FocusVisualElement" BorderBrush="#FFECF5FD" BorderThickness="{TemplateBinding BorderThickness}"  IsHitTestVisible="False" Opacity="0" >
                             <Border Background="#FFE3F1FC" x:Name="InnerFocusVisualElement" BorderBrush="#FFE3F1FC" BorderThickness="{TemplateBinding BorderThickness}"  IsHitTestVisible="False" Opacity="1" >
                                 <Border Background="#FFD9ECFA" x:Name="InnerFocusVisualElement2" BorderBrush="#FFD9ECFA" BorderThickness="{TemplateBinding BorderThickness}" IsHitTestVisible="False" Opacity="1" >
-                                    <Border Background="{TemplateBinding Background}" x:Name="InnerFocusVisualElement3" BorderBrush="#8cc63e" BorderThickness="{TemplateBinding BorderThickness}" IsHitTestVisible="False" Opacity="1" >
+                                    <Border Background="{TemplateBinding Background}" x:Name="InnerFocusVisualElement3" BorderBrush="Gold" BorderThickness="{TemplateBinding BorderThickness}" IsHitTestVisible="False" Opacity="1" >
                                     </Border>
                                 </Border>
                             </Border>

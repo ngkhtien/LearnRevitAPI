@@ -7,6 +7,7 @@
         <ResourceDictionary Source="ButtonStyle.xaml"/>
         <ResourceDictionary Source="CheckBoxStyle.xaml"/>
         <ResourceDictionary Source="RadiobuttonStyle.xaml"/>
+        <ResourceDictionary Source="TreeViewStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="TextBlock">

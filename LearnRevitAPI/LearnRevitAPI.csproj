@@ -119,17 +119,26 @@
       <DependentUpon>PurgeViewWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="08_PurgeView-DirectShape\ViewExtension.cs" />
+    <Compile Include="09_RenameView\RenameViewCmd.cs" />
+    <Compile Include="09_RenameView\RenameViewModel.cs" />
+    <Compile Include="09_RenameView\RenameViewWindow.xaml.cs">
+      <DependentUpon>RenameViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="09_RenameView\ViewExtension2.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="Lib\AlphaComparer.cs" />
     <Compile Include="Lib\CadUtils.cs" />
     <Compile Include="Lib\DeleteWarningSuper.cs" />
     <Compile Include="Lib\ElementSelector.cs" />
     <Compile Include="Lib\EqualityCompareCategory.cs" />
+    <Compile Include="Lib\EqualityComparer.cs" />
     <Compile Include="Lib\FamilySymbolUtils.cs" />
     <Compile Include="Lib\ImportInstanceSelectionFilter.cs" />
     <Compile Include="Lib\OfficeUtils.cs" />
     <Compile Include="Lib\ParameterUtils.cs" />
     <Compile Include="Lib\RevitAPIConstraint.cs" />
+    <Compile Include="Lib\ViewUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWPF\TestWPFCmd.cs" />
     <Compile Include="TestWPF\TestWPFWindow.xaml.cs">
@@ -162,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="08_PurgeView-DirectShape\PurgeViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="09_RenameView\RenameViewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

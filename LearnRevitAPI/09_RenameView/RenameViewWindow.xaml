@@ -1,0 +1,227 @@
+﻿<Window x:Class="LearnRevitAPI._09_RenameView.RenameViewWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnRevitAPI._09_RenameView"
+             xmlns:alphaBim="clr-namespace:AlphaBIM;assembly=AlphaBIMWPF"
+             xmlns:learnRevitApi="clr-namespace:LearnRevitAPI"
+             mc:Ignorable="d" 
+             
+             Title="Rename Views" ResizeMode="CanResize"
+             ShowInTaskbar="True"
+             WindowStartupLocation="CenterScreen"
+             Height="750" Width="920"
+             MinWidth="910"
+             Topmost="False">
+
+    <FrameworkElement.Resources>
+        <ResourceDictionary Source="../WPF_Lib/Style/Styles.xaml"/>
+    </FrameworkElement.Resources>
+
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="420"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Scope Views"
+                      Grid.Column="0"
+                      >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Content="Entire Project"
+                                 Grid.Row="0"
+                                 GroupName="ScopeExcute"
+                                 IsChecked="{Binding IsEntireProject}" 
+                                 Style="{DynamicResource RadioButtonStyle}"/>
+
+                    <RadioButton Grid.Row="1"
+                                 Content="Current Selection"
+                                 GroupName="ScopeExcute"
+                                 IsChecked="{Binding IsCurrentSelection}" 
+                                 Style="{DynamicResource RadioButtonStyle}"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Options"
+                      Grid.Column="1"
+                      >
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Add Prefix:" />
+                    <TextBlock Grid.Column="2"
+                               Grid.Row="0"
+                               Text="Add Suffix:" />
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="1"
+                               Text="Find Value:" />
+                    <TextBlock Grid.Column="2"
+                               Grid.Row="1"
+                               Text="Replace:" />
+
+                    <TextBox Grid.Row="0" Grid.Column="1"
+                             Text="{Binding Prefix}"
+                             Style="{DynamicResource TextBoxStyle}"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="3"
+                             Text="{Binding Suffix}"
+                             Style="{DynamicResource TextBoxStyle}"/>
+
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                             Text="{Binding FindValue}"
+                             Style="{DynamicResource TextBoxStyle}"/>
+
+                    <TextBox Grid.Row="1" Grid.Column="3"
+                             Text="{Binding ReplaceValue}"
+                             Style="{DynamicResource TextBoxStyle}"/>
+
+                </Grid>
+            </GroupBox>
+
+            <DockPanel Grid.Column="2"
+                       VerticalAlignment="Bottom"
+                       DockPanel.Dock="Bottom">
+
+                <Button DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        Content="CANCEL"
+                        IsCancel="True"
+                        Width="100"
+                        Click="btnCancel_Click"
+                        Style="{DynamicResource ButtonStyle}"
+                />
+
+                <Button DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        Content="OK"
+                        Width="100"
+                        Height="30"
+                        Click="btnOk_Click"
+                        Style="{DynamicResource ButtonStyle}"
+                        />
+
+                <Button DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        Content="APPLY"
+                        IsDefault="True"
+                        Width="100"
+                        Click="btnRun_Click"
+                        Style="{DynamicResource ButtonStyle}"
+                         />
+
+            </DockPanel>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel LastChildFill="True" Grid.Column="0">
+                <TreeView ItemsSource="{Binding AllViewsExtension}"
+                          alphaBim:CustomTreeView.SelectedItems = "{Binding SelectedViewsExtension}"
+                          alphaBim:CustomTreeView.EnableMultiSelect="True"
+                          ItemContainerStyle="{DynamicResource TreeViewItemStyle}">
+                    
+                    <TreeView.ItemTemplate>
+
+                        <HierarchicalDataTemplate DataType="learnRevitApi:ViewExtension2"
+                                                  ItemsSource="{Binding ViewItems}">
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="20">
+
+                                <CheckBox Style="{DynamicResource CheckBoxStyle}"
+                                          IsChecked="{Binding IsSelected}" 
+                                          Checked="TreeView_OnChecked"/>
+
+                                <TextBlock Text="{Binding Name}"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+
+                        </HierarchicalDataTemplate>
+
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </DockPanel>
+
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical">
+
+                <Button Click="btnAddViews_Click"
+                        Width="50" Height="50" 
+                        Content=">">
+
+                </Button>
+
+                <Button Click="btnRemoveViews_Click"
+                        Width="50" Height="50"
+                        Content="&lt;">
+
+                </Button>
+
+            </StackPanel>
+
+            <DataGrid x:Name="DataGridRenameView"
+                      Grid.Column="2" Margin="4"
+                      ItemsSource="{Binding AllViewsToRename}"
+                      alphaBim:CustomDataGrid.SelectedItems = "{Binding SelectedViewsToRename}"
+                      SelectionMode="Extended"
+                      Style="{DynamicResource DataGridStyle}"
+                      AutoGenerateColumns="False">
+                
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Current Name"
+                                            Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate DataType="learnRevitApi:ViewExtension2">
+                                <TextBlock HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="ColNewName"
+                                            Header="New Name"
+                                            Width="*" MinWidth="80"
+                                            IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate DataType="learnRevitApi:ViewExtension2">
+                                <TextBox HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Style="{DynamicResource TextBoxStyle}"
+                                           Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}"
+                                           BorderBrush="White"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</Window>
