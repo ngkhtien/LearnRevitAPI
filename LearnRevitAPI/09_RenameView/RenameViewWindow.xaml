@@ -22,7 +22,7 @@
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="420"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -31,6 +31,10 @@
                       Grid.Column="0"
                       >
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
@@ -40,13 +44,13 @@
                                  Grid.Row="0"
                                  GroupName="ScopeExcute"
                                  IsChecked="{Binding IsEntireProject}" 
-                                 Style="{DynamicResource RadioButtonStyle}"/>
+                                 Style="{DynamicResource RadioButtonStyle}" Grid.ColumnSpan="2" Margin="5,8,5,7"/>
 
                     <RadioButton Grid.Row="1"
                                  Content="Current Selection"
                                  GroupName="ScopeExcute"
                                  IsChecked="{Binding IsCurrentSelection}" 
-                                 Style="{DynamicResource RadioButtonStyle}"/>
+                                 Style="{DynamicResource RadioButtonStyle}" Grid.ColumnSpan="2" Margin="5,7,5,8"/>
                 </Grid>
             </GroupBox>
 
@@ -144,7 +148,7 @@
                           alphaBim:CustomTreeView.SelectedItems = "{Binding SelectedViewsExtension}"
                           alphaBim:CustomTreeView.EnableMultiSelect="True"
                           ItemContainerStyle="{DynamicResource TreeViewItemStyle}">
-                    
+
                     <TreeView.ItemTemplate>
 
                         <HierarchicalDataTemplate DataType="learnRevitApi:ViewExtension2"
@@ -192,7 +196,7 @@
                       SelectionMode="Extended"
                       Style="{DynamicResource DataGridStyle}"
                       AutoGenerateColumns="False">
-                
+
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Current Name"
                                             Width="*">
@@ -220,7 +224,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
-                
+
             </DataGrid>
         </Grid>
     </DockPanel>
